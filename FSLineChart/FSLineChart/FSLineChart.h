@@ -63,6 +63,11 @@ typedef NS_ENUM(NSInteger, ValueLabelPositionType) {
 @property (nonatomic, strong) UIColor* axisColor;
 @property (nonatomic) CGFloat axisLineWidth;
 
+
+
+//gradual
+@property (nonatomic) BOOL fillGradual;
+
 // Chart parameters
 @property (nonatomic, strong) UIColor* color;
 @property (nonatomic, strong) UIColor* fillColor;
@@ -82,6 +87,8 @@ typedef NS_ENUM(NSInteger, ValueLabelPositionType) {
 // Smoothing
 @property (nonatomic) BOOL bezierSmoothing;
 @property (nonatomic) CGFloat bezierSmoothingTension;
+
+
 
 // Animations
 @property (nonatomic) CGFloat animationDuration;

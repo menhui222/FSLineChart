@@ -351,8 +351,27 @@
         fillLayer.lineWidth = 0;
         fillLayer.lineJoin = kCALineJoinRound;
         
-        [self.layer addSublayer:fillLayer];
-        [self.layers addObject:fillLayer];
+        
+        CAGradientLayer * gradientLayer = [[CAGradientLayer alloc] initWithLayer:fillLayer];
+        //设置渐变颜色方向
+        gradientLayer.frame = fillLayer.bounds;
+        gradientLayer.startPoint = CGPointMake(0,0);
+        gradientLayer.endPoint = CGPointMake(0, 1);
+        
+        //设定颜色组
+        gradientLayer.colors = @[(__bridge id)_fillColor.CGColor,(__bridge id)[UIColor whiteColor].CGColor];
+        gradientLayer.mask = fillLayer;
+        _fillGradual = YES;
+        if(_fillGradual)
+        {
+            [self.layer addSublayer:gradientLayer];
+            [self.layers addObject:gradientLayer];
+        }else
+        {
+            [self.layer addSublayer:fillLayer];
+            [self.layers addObject:fillLayer];
+        }
+        
         
         CABasicAnimation *fillAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
         fillAnimation.duration = _animationDuration;

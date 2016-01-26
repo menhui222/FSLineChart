@@ -32,8 +32,8 @@
     NSMutableArray* chartData = [NSMutableArray arrayWithCapacity:10];
     
     for(int i=0;i<10;i++) {
-        int r = (rand() + rand()) % 1000;
-        chartData[i] = [NSNumber numberWithInt:r + 200];
+        int r = abs((rand() + rand()) % 10);
+        chartData[i] = [NSNumber numberWithInt:r ];
     }
     
     // Setting up the line chart
