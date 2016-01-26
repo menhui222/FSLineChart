@@ -361,7 +361,7 @@
         //设定颜色组
         gradientLayer.colors = @[(__bridge id)_fillColor.CGColor,(__bridge id)[UIColor whiteColor].CGColor];
         gradientLayer.mask = fillLayer;
-        _fillGradual = YES;
+        //_fillGradual = YES;
         if(_fillGradual)
         {
             [self.layer addSublayer:gradientLayer];
